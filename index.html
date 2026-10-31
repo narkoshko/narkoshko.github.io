@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5b8d8">
+  <title>diary.exe ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="desktop-glow glow-one"></div>
+  <div class="desktop-glow glow-two"></div>
+  <div class="desktop">
+    <header class="topbar glass">
+      <a class="brand" href="#" aria-label="diary.exe home">
+        <span class="brand-icon">♡</span>
+        <span>diary<span class="brand-dot">.</span>exe</span>
+      </a>
+      <div class="topbar-center"><span class="status-dot"></span> YOUR LITTLE CORNER OF THE INTERNET</div>
+      <div class="topbar-right">
+        <span id="topDate">SUN, OCT 25</span>
+        <span class="top-divider"></span>
+        <span id="topClock">06:10 PM</span>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="sidebar glass">
+        <div class="profile-card">
+          <div class="avatar-wrap">
+            <div class="avatar" id="avatarPreview">♡</div>
+            <span class="online-dot"></span>
+          </div>
+          <div class="profile-name" id="profileName">angel baby</div>
+          <div class="profile-subtitle">professional daydreamer</div>
+          <button class="tiny-edit" id="openSettings">✧ customize profile</button>
+        </div>
+
+        <div class="side-label">YOUR SPACE</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span> My desktop <span class="nav-arrow">›</span></button>
+          <button class="nav-item" data-view="diary"><span class="nav-icon">♡</span> My diary <span class="nav-count" id="entryCount">0</span></button>
+          <button class="nav-item" data-view="calendar"><span class="nav-icon">▦</span> Calendar</button>
+          <button class="nav-item" data-view="moods"><span class="nav-icon">☻</span> Mood tracker</button>
+        </nav>
+
+        <div class="side-label side-label-lower">LITTLE EXTRAS</div>
+        <button class="nav-item" id="quickNote"><span class="nav-icon">✎</span> Quick note</button>
+        <button class="nav-item" id="openTheme"><span class="nav-icon">✧</span> Change theme</button>
+
+        <div class="sidebar-bottom">
+          <div class="mini-sticker">xoxo ♡</div>
+          <p>made with glitter<br>and a little bit of magic</p>
+          <span class="version">DIARY.EXE v1.0.03</span>
+        </div>
+      </aside>
+
+      <section class="main-panel">
+        <div class="welcome-row">
+          <div>
+            <p class="eyebrow" id="greetingEyebrow">YOUR DIGITAL UNIVERSE</p>
+            <h1 id="welcomeTitle">Welcome back,<br><span id="welcomeName">angel baby</span><span class="title-heart"> ♡</span></h1>
+            <p class="welcome-subtitle">A place to keep all your moments.</p>
+          </div>
+          <div class="date-card glass">
+            <div class="date-sparkle">✧</div>
+            <span class="date-day" id="dateDay">25</span>
+            <span class="date-month" id="dateMonth">OCTOBER</span>
+            <span class="date-weekday" id="dateWeekday">SUNDAY</span>
+          </div>
+        </div>
+
+        <div class="view active" id="view-home">
+          <div class="home-grid">
+            <section class="widget widget-entry">
+              <div class="widget-heading">
+                <div><span class="widget-kicker">TODAY'S MOMENT</span><h2>Today's entry <span>✎</span></h2></div>
+                <span class="widget-symbol">♡</span>
+              </div>
+              <div id="todayEntryContent" class="today-entry-content">
+                <div class="empty-doodle">✿</div>
+                <p class="empty-title">Your page is waiting, lovely.</p>
+                <p class="empty-copy">Write down a thought, a memory, or anything on your mind.</p>
+              </div>
+              <button class="primary-button" id="writeToday"><span>＋</span> write today's entry</button>
+            </section>
+
+            <section class="widget widget-mood">
+              <div class="widget-heading">
+                <div><span class="widget-kicker">CHECK IN WITH YOURSELF</span><h2>Today's mood <span>☻</span></h2></div>
+                <span class="widget-symbol">✧</span>
+              </div>
+              <p class="widget-description">How are you feeling?</p>
+              <div class="mood-options" id="homeMoodOptions">
+                <button class="mood-choice" data-mood="happy" aria-label="Happy"><span>☀</span><small>happy</small></button>
+                <button class="mood-choice" data-mood="loved" aria-label="Loved"><span>♡</span><small>loved</small></button>
+                <button class="mood-choice" data-mood="calm" aria-label="Calm"><span>☁</span><small>calm</small></button>
+                <button class="mood-choice" data-mood="tired" aria-label="Tired"><span>☾</span><small>tired</small></button>
+                <button class="mood-choice" data-mood="sad" aria-label="Sad"><span>☹</span><small>sad</small></button>
+              </div>
+              <p class="mood-feedback" id="moodFeedback">choose the little face that feels like you ♡</p>
+            </section>
+
+            <section class="widget widget-recent">
+              <div class="widget-heading">
+                <div><span class="widget-kicker">FROM YOUR MEMORY BOX</span><h2>Recent entries</h2></div>
+                <button class="text-button" data-go="diary">view all ↗</button>
+              </div>
+              <div id="recentEntries" class="recent-list">
+                <div class="soft-empty">Your memories will live here. <span>♡</span></div>
+              </div>
+            </section>
+
+            <section class="widget widget-stats">
+              <div class="widget-heading">
+                <div><span class="widget-kicker">YOUR WORLD</span><h2>Diary stats</h2></div>
+                <span class="widget-symbol">✦</span>
+              </div>
+              <div class="stat-row">
+                <div class="stat-icon">♡</div>
+                <div><strong id="statEntries">0</strong><span>memories saved</span></div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-icon star-icon">✧</div>
+                <div><strong id="statMoods">0</strong><span>days checked in</span></div>
+              </div>
+              <div class="quote-box">“u were born original, dont die as a copy.” <span>— your diary</span></div>
+            </section>
+          </div>
+          <div class="bottom-note"><span>♡</span> this space is yours. <span>♡</span></div>
+        </div>
+
+        <div class="view" id="view-diary">
+          <div class="section-header">
+            <div><p class="eyebrow">YOUR MEMORY BOX</p><h1>My diary <span class="title-heart">♡</span></h1><p class="welcome-subtitle">Every little thought deserves a place.</p></div>
+            <button class="primary-button" id="newEntry"><span>＋</span> new entry</button>
+          </div>
+          <div class="toolbar glass">
+            <label class="search-box"><span>⌕</span><input id="searchEntries" type="search" placeholder="search your memories..." aria-label="Search entries"></label>
+            <select id="filterMood" aria-label="Filter by mood"><option value="all">all moods</option><option value="happy">happy</option><option value="loved">loved</option><option value="calm">calm</option><option value="tired">tired</option><option value="sad">sad</option><option value="excited">excited</option><option value="anxious">anxious</option></select>
+            <select id="sortEntries" aria-label="Sort entries"><option value="newest">newest first</option><option value="oldest">oldest first</option><option value="az">title A–Z</option></select>
+          </div>
+          <div id="diaryEntries" class="entry-grid"></div>
+          <div id="diaryEmpty" class="empty-state hidden"><span>♡</span><h2>No memories found</h2><p>Try another search, or make a brand-new memory.</p><button class="primary-button" id="emptyNewEntry">＋ write an entry</button></div>
+        </div>
+
+        <div class="view" id="view-calendar">
+          <div class="section-header">
+            <div><p class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</p><h1>My calendar <span class="title-heart">♡</span></h1><p class="welcome-subtitle">Every date has a story waiting to happen.</p></div>
+          </div>
+          <section class="widget calendar-widget">
+            <div class="calendar-header"><button class="circle-button" id="prevMonth" aria-label="Previous month">‹</button><div><h2 id="calendarMonth">October 2026</h2><p>your days, all in one place ♡</p></div><button class="circle-button" id="nextMonth" aria-label="Next month">›</button></div>
+            <div class="calendar-weekdays"><span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div>
+            <div class="calendar-days" id="calendarDays"></div>
+            <div class="calendar-legend"><span class="legend-dot today-dot"></span> today <span class="legend-dot entry-dot"></span> has a memory <span class="legend-dot selected-dot"></span> selected</div>
+          </section>
+          <section class="widget selected-day-widget"><div class="widget-heading"><div><span class="widget-kicker">YOUR SELECTED DAY</span><h2 id="selectedDateTitle">October 25, 2026</h2></div><button class="primary-button small-button" id="entryForDate">＋ add memory</button></div><div id="selectedDayEntries" class="selected-day-list"></div></section>
+        </div>
+
+        <div class="view" id="view-moods">
+          <div class="section-header"><div><p class="eyebrow">A CHECK-IN</p><h1>Mood tracker <span class="title-heart">♡</span></h1><p class="welcome-subtitle">No feeling is too small to write down.</p></div></div>
+          <div class="mood-page-grid">
+            <section class="widget mood-log-widget"><div class="widget-heading"><div><span class="widget-kicker">TODAY, RIGHT NOW</span><h2>How's your heart?</h2></div><span class="widget-symbol">☻</span></div><p class="widget-description">Pick the mood that fits today. You can change it whenever you like.</p><div class="large-mood-options" id="largeMoodOptions"></div><p id="largeMoodFeedback" class="mood-feedback">your feelings are welcome here ♡</p></section>
+            <section class="widget mood-summary-widget"><div class="widget-heading"><div><span class="widget-kicker">YOUR RECENT FEELINGS</span><h2>This week's mood mix</h2></div><span class="widget-symbol">✧</span></div><div id="moodSummary" class="mood-summary"></div><div class="mood-total"><span>check-ins this week</span><strong id="weekMoodCount">0</strong></div></section>
+          </div>
+          <section class="widget mood-history-widget"><div class="widget-heading"><div><span class="widget-kicker">LOOKING BACK</span><h2>Recent check-ins</h2></div></div><div id="moodHistory" class="mood-history"></div></section>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>diary.exe © 2026–forever</span><span>made with <b>♥</b> and a little glitter</span><span id="savedStatus">all changes saved locally ♡</span></footer>
+  </div>
+
+  <div class="modal-backdrop hidden" id="entryModal" role="dialog" aria-modal="true" aria-labelledby="entryModalTitle">
+    <form class="modal-window entry-form-window" id="entryForm">
+      <div class="window-bar"><span><span class="window-heart">♡</span> <span id="entryModalTitle">a little memory</span></span><button type="button" class="window-close" data-close="entryModal" aria-label="Close">×</button></div>
+      <div class="modal-content">
+        <p class="modal-intro">dear diary, today i want to remember...</p>
+        <input type="hidden" id="entryId">
+        <label class="field-label" for="entryTitle">ENTRY TITLE</label>
+        <input class="form-input" id="entryTitle" maxlength="80" required placeholder="a day worth remembering...">
+        <div class="form-two-col">
+          <div><label class="field-label" for="entryDate">DATE</label><input class="form-input" id="entryDate" type="date" required></div>
+          <div><label class="field-label" for="entryMood">MY MOOD</label><select class="form-input" id="entryMood"><option value="happy">☀ happy</option><option value="loved">♡ loved</option><option value="calm">☁ calm</option><option value="tired">☾ tired</option><option value="sad">☹ sad</option><option value="excited">✦ excited</option><option value="anxious">〰 anxious</option></select></div>
+        </div>
+        <label class="field-label" for="entryText">YOUR THOUGHTS</label>
+        <textarea class="form-input entry-textarea" id="entryText" maxlength="5000" required placeholder="write everything here... the big things, the tiny things, the things you don't want to forget."></textarea>
+        <div class="form-footer"><span id="charCount">0 / 5000</span><button class="primary-button" type="submit">♡ save memory</button></div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-backdrop hidden" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <section class="modal-window">
+      <div class="window-bar"><span><span class="window-heart">♡</span> <span id="settingsTitle">make it yours</span></span><button type="button" class="window-close" data-close="settingsModal" aria-label="Close">×</button></div>
+      <div class="modal-content">
+        <p class="modal-intro">a little personalization goes a long way ✧</p>
+        <label class="field-label" for="nicknameInput">YOUR NICKNAME</label><input class="form-input" id="nicknameInput" maxlength="24" placeholder="angel baby">
+        <label class="field-label">PICK YOUR AVATAR</label><div class="avatar-picker" id="avatarPicker"><button type="button" data-avatar="♡">♡</button><button type="button" data-avatar="☆">☆</button><button type="button" data-avatar="✿">✿</button><button type="button" data-avatar="☻">☻</button><button type="button" data-avatar="୨୧">୨୧</button></div>
+        <label class="field-label">CHOOSE YOUR THEME</label><div class="theme-picker"><button type="button" class="theme-swatch selected" data-theme="pink"><span class="swatch-pink"></span> bubblegum</button><button type="button" class="theme-swatch" data-theme="lavender"><span class="swatch-lavender"></span> lavender</button><button type="button" class="theme-swatch" data-theme="blue"><span class="swatch-blue"></span> baby blue</button></div>
+        <button class="primary-button full-button" id="saveSettings">♡ save </button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop hidden" id="quickNoteModal" role="dialog" aria-modal="true" aria-labelledby="quickNoteTitle">
+    <form class="modal-window" id="quickNoteForm">
+      <div class="window-bar"><span><span class="window-heart">♡</span> <span id="quickNoteTitle">quick little note</span></span><button type="button" class="window-close" data-close="quickNoteModal" aria-label="Close">×</button></div>
+      <div class="modal-content">
+        <p class="modal-intro">a thought before it floats away...</p>
+        <textarea class="form-input quick-note-text" id="quickNoteText" maxlength="1000" required placeholder="don't forget to..."></textarea>
+        <button class="primary-button full-button" type="submit">♡ save as diary entry</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span>♡</span><span id="toastMessage">saved to your diary!</span></div>
+  <script src="script.js"></script>
+</body>
+</html>
